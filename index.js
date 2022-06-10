@@ -63,5 +63,4 @@ btn.addEventListener("click",function (e){
     //reset input field
     namez.value =""
     document.querySelector(".person").setAttribute("autofocus","autofocus");
- 
 })
