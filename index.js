@@ -3,6 +3,7 @@
 
 const btn = document.querySelector(".send");
 const namez = document.querySelector(".person");
+const formElem = document.querySelector(".testa");
 let content = ``;
 let takeAway;
 
@@ -31,10 +32,10 @@ const boot = function(){
     }
 }
 
+
+
+
 boot();
-
-
-
 
 //
 let counter;
@@ -44,8 +45,7 @@ if (sessionStorage.getItem("counter")){
     counter = 0;
 }
 
-
-console.log(btn);
+//
 btn.addEventListener("click",function (e){
     e.preventDefault()
     sessionStorage.setItem(`name${counter}`,namez.value);
@@ -64,3 +64,10 @@ btn.addEventListener("click",function (e){
     namez.value =""
     document.querySelector(".person").setAttribute("autofocus","autofocus");
 })
+
+
+formElem.onsubmit = (e)=>{
+    e.preventDefault();
+    let data = new FormData(formElem);
+    console.log(`name are ${data.get("f")} and ${data.get("l")}`);
+}
